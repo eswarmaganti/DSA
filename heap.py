@@ -93,7 +93,7 @@ class Heap:
             # re-arranging the nodes
             self.__heapify_down(smallest_child_index)
 
-    # method to get the Root node/ min value from the heap
+    # method to remove the Root node/ min value from the heap
     def poll(self)->Optional[int]:
         # removing the first node
         removed_node = self.nodes[0]
@@ -108,12 +108,27 @@ class Heap:
         self.__heapify_down()
         return removed_node
 
+    # method to check if heap is empty or not
+    def is_empty(self):
+        return not self.nodes
+
+    # method which returns the root node from heap
+    def peek(self)-> int:
+        if not self.is_empty():
+            return  None
+        return self.nodes[0]
+
+    # method to perform heap sort
+
+
+def heap_sort():
+    data = [1, 10, 2, 5, 11, 6, 19]
+    obj = Heap(data)
+    sorted_data = []
+    for _ in range(len(data)):
+        sorted_data.append(obj.poll())
+    return sorted_data
 
 # main method
 if __name__ == "__main__":
-    data = [1,10,2,5,11,6,19]
-    obj = Heap(data)
-    print(obj.nodes)
-    while len(obj.nodes):
-        print(f"POOL: {obj.poll()}")
-    #print(obj.nodes)
+    print(heap_sort())
