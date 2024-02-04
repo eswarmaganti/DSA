@@ -121,6 +121,7 @@ class Heap:
     # method to perform heap sort
 
 
+# Method to perform Heap Sort using auxilory space
 def heap_sort():
     data = [1, 10, 2, 5, 11, 6, 19]
     obj = Heap(data)
